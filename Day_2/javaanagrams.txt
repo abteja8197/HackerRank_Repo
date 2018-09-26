@@ -1,0 +1,26 @@
+    static boolean isAnagram(String a, String b) {
+        
+        int l1=a.length();
+        int l2=b.length();
+        if(l1!=l2)
+        {
+            return false;
+        }
+        else{
+            a=a.toLowerCase();
+            b=b.toLowerCase();
+            char[] ar=a.toCharArray();
+            char[] br=b.toCharArray();
+            java.util.Arrays.sort(ar);
+            java.util.Arrays.sort(br);
+            for(int i=0;i<l1;i++)
+            {
+                if(ar[i]!=br[i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        
+    }

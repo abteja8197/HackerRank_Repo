@@ -1,0 +1,37 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        ArrayList<Integer[]> arrayList=new ArrayList<Integer[]>();
+        
+        for(int i=0;i<n;i++){
+            int numOfElements=sc.nextInt();
+            
+            Integer[] arr=new Integer[numOfElements];
+            for(int j=0;j<numOfElements;j++){
+               arr[j]=sc.nextInt();
+            }
+            arrayList.add(i,arr); 
+        }
+        int testCases=sc.nextInt();
+        for(int i=0;i<testCases;i++){
+            int row=sc.nextInt();
+            int col=sc.nextInt();
+            int size=arrayList.size();
+            if(size < row){
+                System.out.println("ERROR!");
+                continue;
+            }
+            Integer[] temp=arrayList.get(row-1);
+            if(temp.length < col){
+                 System.out.println("ERROR!");
+                continue;
+            }
+            System.out.println(temp[col-1]);
+        }
+    }
+}
